@@ -2,6 +2,12 @@ name: Excavator
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'bucket/**'
   schedule:
     # run every 4 hours
     - cron: '20 */4 * * *'
