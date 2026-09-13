@@ -2,12 +2,6 @@ name: Excavator
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - 'bucket/**'
   schedule:
     # run every 4 hours
     - cron: '20 */4 * * *'
@@ -25,4 +19,4 @@ jobs:
       - name: Excavate
         uses: ScoopInstaller/GithubActions@5bceeda181721d9d10a18fdcc3ddca6f33467ae6 # v3.0.0
         env:
-          SKIP_UPDATED: 1
+          THROW_ERROR: 1
